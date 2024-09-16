@@ -1,0 +1,5 @@
+(URL)?UTG=PlayerA&betUTG=1000&rankUTG=1
+
+プレビューするサイト
+https://htmlpreview.github.io/
+

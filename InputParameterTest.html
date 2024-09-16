@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>URLからパラメーターを取得</title>
+</head>
+<body>
+    URLからパラメーターを取得するサンプル<br>
+    <input type="text" id="UTG">
+    <input type="number" id="betUTG">
+    <input type="number" id="rankUTG">
+    <br>
+    <br>
+    <a href="./InputParameterTest.html">当ページの普通のリンク</a><br>
+    <a href="./InputParameterTest.html?UTG=Player1&betUTG=1000&rankUTG=1">パラメーター付きのリンク</a>
+
+    <script>
+        //パラメーターを取得
+        const URLParameter = new URLSearchParams(location.search);
+        console.log(URLParameter.get("PlayerName"));
+        document.getElementById("UTG").value = URLParameter.get("UTG");
+        document.getElementById("betUTG").value = URLParameter.get("betUTG");
+        document.getElementById("rankUTG").value = URLParameter.get("rankUTG");
+    </script>   
+</body>
+ 
+</html>
