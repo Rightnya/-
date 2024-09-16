@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>URLからパラメーターを取得</title>
+</head>
+<body>
+    URLからパラメーターを取得するサンプル<br>
+    <form id="playerForm">
+        <label for="UTG">お名前：</label>
+        <input type="text" id="UTG" name="UTG" placeholder="プレイヤー名を入力" value="zeke1" required="">
+        <input type="number" id="betUTG" name="betUTG" placeholder="ベット額" min="0" value="1000">
+        <input type="number" id="rankUTG" name="rankUTG" placeholder="順位" min="1" value="1">
+        <input type="checkbox" id="checkboxUTG" name="checkboxUTG" checked="checked"><br><br>
+                
+        
+        <button type="submit">実行</button>
+    </form>
+    <br>
+    <br>
+    <a href="./InputParameterTest.html">当ページの普通のリンク</a><br>
+    <a href="./InputParameterTest.html?UTG=山田太郎&betUTG=1234&rankUTG=2">パラメーター付きのリンク</a>
+
+    <script>
+        //パラメーターを取得
+        const URLParameter = new URLSearchParams(location.search);
+        console.log(URLParameter.get("PlayerName"));
+        document.getElementById("UTG").value = URLParameter.get("UTG");
+        document.getElementById("betUTG").value = URLParameter.get("betUTG");
+        document.getElementById("rankUTG").value = URLParameter.get("rankUTG");
+    </script>   
+</body>
+ 
+</html>
